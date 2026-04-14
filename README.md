@@ -1,31 +1,30 @@
-# CompanionAI Legal Website
+# Ronai Labs Legal Website
 
-A simple static legal website for the CompanionAI mobile app.
+This repository hosts the public legal website for Ronai Labs mobile applications.
 
-## Files
-- `index.html` — landing page
-- `privacy.html` — privacy policy
-- `terms.html` — terms of service
-- `cookies.html` — cookie policy
-- `contact.html` — contact page
+## Included pages
+- `index.html` — landing page and legal portal index
+- `privacy.html` — privacy policy (includes account/data deletion instructions)
+- `terms.html` — terms of service (includes Google Play platform compliance language)
+- `cookies.html` — cookie and similar technology policy
+- `contact.html` — user support, privacy, and legal contact channels
 - `styles.css` — shared styles
-- `script.js` — active nav helper
+- `script.js` — active navigation helper
 
-## Before publishing
-Replace these placeholders across the pages:
-- `[Company Name]` → Ronai Labs
-- `[Support Email]`
-- `[Privacy Contact Email]`
-- `[Website URL]`
-- `[Effective Date]`
-- `[Last Updated Date]`
-- `[Jurisdiction / Governing Law]`
-- `[Jurisdiction / Venue]`
+## Production values set in this repo
+- Company name: **Ronai Labs**
+- Support email: **support.ronailabs@gmail.com**
+- Legal/policy email: **legal@ronailabs.com**
+- Website URL: **https://www.ronailabs.com**
+- Effective date: **April 14, 2026**
+- Last updated date: **April 14, 2026**
+- Governing law: **State of Delaware, United States**
+- Venue: **State or federal courts in Wilmington, Delaware**
 
 ## Run locally
-Open `index.html` in a browser.
+Open `index.html` in any modern browser.
 
-## Free hosting options
+## Deploy (static hosting)
 ### GitHub Pages
 1. Create a public GitHub repository.
 2. Upload all files to the repository root.
@@ -37,14 +36,14 @@ Open `index.html` in a browser.
 1. Push the folder to GitHub.
 2. Create a Cloudflare Pages project.
 3. Import the GitHub repository.
-4. Use the root directory and no build command for this static site.
+4. Use the root directory and no build command.
 5. Deploy.
 
 ### Vercel
 1. Push the folder to GitHub.
 2. Import the repository into Vercel.
-3. Choose the default static deployment settings.
+3. Use default static deployment settings.
 4. Deploy.
 
-## Important
-This template is original content created for general informational use. It is not legal advice. Have a lawyer review the final wording before publishing.
+## Note
+Legal text should be periodically reviewed when app features, data flows, or store policy obligations change.
