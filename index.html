@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CompanionAI is an AI companion app with clear legal information, privacy details, and easy support contact access." />
+  <title>CompanionAI — AI companion app</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="CompanionAI home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>CompanionAI</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a data-nav-link href="index.html">Home</a>
+        <a data-nav-link href="privacy.html">Privacy</a>
+        <a data-nav-link href="terms.html">Terms</a>
+        <a data-nav-link href="cookies.html">Cookies</a>
+        <a data-nav-link href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">AI companion app • legal pages included</span>
+          <h1>Professional legal website for your mobile app.</h1>
+          <p>
+            CompanionAI is a modern AI companion app. This website gives users a simple, trustworthy place to read your Privacy Policy, Terms of Service, Cookie Policy, and contact details.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="privacy.html">Read Privacy Policy</a>
+            <a class="button secondary" href="#legal-pages">See legal pages</a>
+          </div>
+        </div>
+        <div class="glass-card hero-stats" aria-label="Highlights">
+          <div class="stat">
+            <strong>Clear and readable</strong>
+            <span>Simple English, mobile-friendly layout, and accessible structure.</span>
+          </div>
+          <div class="stat">
+            <strong>Ready for app stores</strong>
+            <span>Includes the core legal pages commonly needed for mobile app publishing.</span>
+          </div>
+          <div class="stat">
+            <strong>Easy to deploy</strong>
+            <span>Static HTML, CSS, and JavaScript that can be hosted for free.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-3">
+          <article class="card feature">
+            <h2>Built for trust</h2>
+            <p>Your users can quickly find how data is handled, what rules apply, and how to contact support.</p>
+          </article>
+          <article class="card feature">
+            <h2>Built for clarity</h2>
+            <p>Each legal page is structured with headings, short paragraphs, and lists for easier reading on mobile and desktop.</p>
+          </article>
+          <article class="card feature">
+            <h2>Built for launch</h2>
+            <p>Use this site as a simple public legal portal while your app grows and legal review is completed.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="legal-pages">
+      <div class="container">
+        <h2>Legal pages</h2>
+        <p class="lead">Start with these core pages and replace the placeholders before publishing.</p>
+        <div class="grid grid-2">
+          <a class="card link-card" href="privacy.html">
+            <h3>Privacy Policy</h3>
+            <p>Explains what data CompanionAI may collect, how it is used, retained, shared, and how users can exercise their rights.</p>
+          </a>
+          <a class="card link-card" href="terms.html">
+            <h3>Terms of Service</h3>
+            <p>Sets the core rules for accounts, subscriptions, AI usage, acceptable conduct, intellectual property, and liability limits.</p>
+          </a>
+          <a class="card link-card" href="cookies.html">
+            <h3>Cookie Policy</h3>
+            <p>Describes cookies and similar technologies used for authentication, preferences, analytics, and site functionality.</p>
+          </a>
+          <a class="card link-card" href="contact.html">
+            <h3>Contact Us</h3>
+            <p>Provides support, privacy, and business contact details with placeholders for your company information.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="small">© <span id="year"></span> [Company Name]. All rights reserved.</div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="cookies.html">Cookie Policy</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
