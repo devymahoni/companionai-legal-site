@@ -313,6 +313,11 @@ article li {
   padding: 24px;
 }
 
+.app-card {
+  margin-top: 24px;
+  padding: 24px;
+}
+
 .site-footer {
   background: #0f1528;
   color: #d8def0;
