@@ -15,7 +15,7 @@ This repository hosts the public legal website for Ronai Labs mobile application
 - Company name: **Ronai Labs**
 - Support email: **support.ronailabs@gmail.com**
 - Legal/policy email: **legal@ronailabs.com**
-- Website URL: **https://www.ronailabs.com**
+- Website URL: **https://devymahoni.github.io/companionai-legal-site/index.html**
 - Effective date: **April 14, 2026**
 - Last updated date: **April 14, 2026**
 - Governing law: **State of Delaware, United States**
