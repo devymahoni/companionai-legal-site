@@ -318,6 +318,75 @@ article li {
   padding: 24px;
 }
 
+.app-card-modern {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(124,156,255,0.28);
+  background:
+    radial-gradient(circle at 100% -10%, rgba(124,156,255,0.14), transparent 45%),
+    linear-gradient(180deg, #ffffff, #f9fbff);
+}
+
+.app-card-modern::after {
+  content: "";
+  position: absolute;
+  inset: auto -80px -120px auto;
+  width: 240px;
+  height: 240px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(142,240,208,0.2), transparent 70%);
+  pointer-events: none;
+}
+
+.app-card-head {
+  position: relative;
+  z-index: 1;
+}
+
+.app-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #eef3ff;
+  color: #3558b2;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
+  margin-bottom: 14px;
+}
+
+.app-feature-list {
+  display: grid;
+  gap: 10px;
+  padding-left: 0;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.app-feature-list li {
+  position: relative;
+  padding: 12px 14px 12px 40px;
+  border-radius: 12px;
+  background: #f4f7ff;
+  border: 1px solid rgba(124,156,255,0.2);
+}
+
+.app-feature-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 14px;
+  top: 11px;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 0.75rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, #5a7fff, #79b2ff);
+}
+
 .site-footer {
   background: #0f1528;
   color: #d8def0;
