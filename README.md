@@ -13,7 +13,7 @@ A simple static legal website for the CompanionAI mobile app.
 
 ## Before publishing
 Replace these placeholders across the pages:
-- `[Company Name]`
+- `[Company Name]` → Ronai Labs
 - `[Business Address]`
 - `[Support Email]`
 - `[Privacy Contact Email]`
