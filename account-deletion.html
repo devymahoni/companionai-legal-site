@@ -65,10 +65,14 @@
 
         <h2 id="web-request">3. Request account deletion by email</h2>
         <p>If you cannot access the app, you can request account deletion by email:</p>
-        <p>This button opens Gmail with a pre-filled deletion request.</p>
-        <p>
-          <a class="button primary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=support.ronailabs%40gmail.com&amp;su=CompanionAI%20Account%20Deletion%20Request&amp;body=Hello%20Ronai%20Labs%2C%0A%0AI%20would%20like%20to%20request%20deletion%20of%20my%20CompanionAI%20account%20and%20associated%20data.%0A%0AAccount%20email%3A%0AReason%20%28optional%29%3A%0A%0AThank%20you." target="_blank" rel="noopener">Send deletion request by email</a>
-        </p>
+        <p>Enter your account email. This button opens Gmail with a pre-filled deletion request.</p>
+        <form class="email-request-form" id="deletion-email-form">
+          <label for="account-email">Account email</label>
+          <div class="email-request-row">
+            <input id="account-email" name="account-email" type="email" autocomplete="email" placeholder="you@example.com" required />
+            <button class="button primary" type="submit">Send deletion request by email</button>
+          </div>
+        </form>
         <p>Please send the request from the same email address associated with your CompanionAI account, or include enough information for us to verify account ownership.</p>
 
         <h2 id="deleted-data">4. Data deleted</h2>
@@ -117,6 +121,42 @@
     </div>
   </footer>
   <script src="script.js"></script>
+  <script>
+    const deletionEmailForm = document.getElementById('deletion-email-form');
+    const accountEmailInput = document.getElementById('account-email');
+
+    if (deletionEmailForm && accountEmailInput) {
+      deletionEmailForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        if (!accountEmailInput.reportValidity()) {
+          return;
+        }
+
+        const accountEmail = accountEmailInput.value.trim();
+        const subject = 'CompanionAI Account Deletion Request';
+        const body = [
+          'Hello Ronai Labs,',
+          '',
+          'I would like to request deletion of my CompanionAI account and associated data.',
+          '',
+          `Account email: ${accountEmail}`,
+          'Reason (optional):',
+          '',
+          'Thank you.'
+        ].join('\n');
+        const params = new URLSearchParams({
+          view: 'cm',
+          fs: '1',
+          to: 'support.ronailabs@gmail.com',
+          su: subject,
+          body
+        });
+
+        window.open(`https://mail.google.com/mail/?${params.toString()}`, '_blank', 'noopener');
+      });
+    }
+  </script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
