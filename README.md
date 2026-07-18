@@ -5,6 +5,7 @@ This repository hosts the public legal website for Ronai Labs mobile application
 ## Included pages
 - `index.html` — landing page and legal portal index
 - `privacy.html` — privacy policy (includes account/data deletion instructions)
+- `privacy-kpss.html` — app-specific privacy policy for KPSS Soru Deneme 2026
 - `terms.html` — terms of service (includes Google Play platform compliance language)
 - `cookies.html` — cookie and similar technology policy
 - `contact.html` — user support, privacy, and legal contact channels
@@ -15,7 +16,7 @@ This repository hosts the public legal website for Ronai Labs mobile application
 - Company name: **Ronai Labs**
 - Support email: **support.ronailabs@gmail.com**
 - Legal/policy email: **legal@ronailabs.com**
-- Website URL: **https://devymahoni.github.io/companionai-legal-site/index.html**
+- Website URL: **https://legal.ronailabs.com/index.html**
 - Effective date: **April 14, 2026**
 - Last updated date: **April 14, 2026**
 - Governing law: **State of Delaware, United States**
