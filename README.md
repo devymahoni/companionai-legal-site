@@ -6,6 +6,7 @@ This repository hosts the public legal website for Ronai Labs mobile application
 - `index.html` — landing page and legal portal index
 - `privacy.html` — privacy policy (includes account/data deletion instructions)
 - `privacy-kpss.html` — app-specific privacy policy for KPSS Soru Deneme 2026
+- `privacy-seriesguru.html` — app-specific privacy policy for SeriesGuru
 - `terms.html` — terms of service (includes Google Play platform compliance language)
 - `cookies.html` — cookie and similar technology policy
 - `contact.html` — user support, privacy, and legal contact channels
