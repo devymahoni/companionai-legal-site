@@ -14,7 +14,8 @@ const ronaiApps = [
     googlePlay:
       'https://play.google.com/store/apps/details?id=com.ronailabs.kpssmacerasi',
     appStore: 'https://apps.apple.com/tr/app/kpss-maceras%C4%B1-soru-deneme/id6792287155',
-    privacy: 'privacy-kpss.html'
+    privacy: 'privacy-kpss.html',
+    detail: 'app-kpss.html'
   },
   {
     name: 'Lunara AI',
@@ -31,7 +32,8 @@ const ronaiApps = [
     googlePlay:
       'https://play.google.com/store/apps/details?id=com.friendlychat.aura',
     appStore: '',
-    privacy: 'privacy-aura.html'
+    privacy: 'privacy-aura.html',
+    detail: 'app-lunara.html'
   },
   {
     name: 'SeriesGuru',
@@ -48,7 +50,8 @@ const ronaiApps = [
     googlePlay:
       'https://play.google.com/store/apps/details?id=com.ronailabs.seriesguru',
     appStore: 'https://apps.apple.com/gb/app/series-guru-tv-show-trivia/id6793951617',
-    privacy: 'privacy-seriesguru.html'
+    privacy: 'privacy-seriesguru.html',
+    detail: 'app-seriesguru.html'
   }
 ];
 
@@ -103,6 +106,10 @@ const escapeHtml = (value) =>
 const createStoreLinks = (app) => {
   const links = [];
 
+  if (app.detail) {
+    links.push(`<a class="button primary" href="${app.detail}">View app</a>`);
+  }
+
   if (app.googlePlay) {
     links.push(
       `<a class="button secondary store" href="${app.googlePlay}" target="_blank" rel="noopener noreferrer">Google Play</a>`
@@ -115,7 +122,7 @@ const createStoreLinks = (app) => {
     );
   }
 
-  links.push(`<a class="button primary" href="${app.privacy}">Privacy</a>`);
+  links.push(`<a class="button secondary" href="${app.privacy}">Privacy</a>`);
 
   return links.join('');
 };
@@ -204,7 +211,8 @@ const initNavigation = () => {
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('[data-nav-link]').forEach((link) => {
     const href = link.getAttribute('href');
-    if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+    const isAppDetail = currentPath.startsWith('app-') && href === 'apps.html';
+    if (href === currentPath || isAppDetail || (currentPath === '' && href === 'index.html')) {
       link.setAttribute('aria-current', 'page');
     }
   });
@@ -310,6 +318,23 @@ const initReveal = () => {
   elements.forEach((element) => observer.observe(element));
 };
 
+const initShowcaseMotion = () => {
+  document.querySelectorAll('[data-tilt-scene]').forEach((scene) => {
+    scene.addEventListener('pointermove', (event) => {
+      const rect = scene.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / rect.width - 0.5) * 12;
+      const y = ((event.clientY - rect.top) / rect.height - 0.5) * -12;
+      scene.style.setProperty('--tilt-x', `${y.toFixed(2)}deg`);
+      scene.style.setProperty('--tilt-y', `${x.toFixed(2)}deg`);
+    });
+
+    scene.addEventListener('pointerleave', () => {
+      scene.style.setProperty('--tilt-x', '0deg');
+      scene.style.setProperty('--tilt-y', '0deg');
+    });
+  });
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initNavigation();
@@ -317,4 +342,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initSearch();
   initCopyButtons();
   initReveal();
+  initShowcaseMotion();
 });
