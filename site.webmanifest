@@ -1,0 +1,9 @@
+{
+  "name": "Ronaillabs Legal Portal",
+  "short_name": "Ronaillabs",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#f6f7fb",
+  "theme_color": "#0f172a",
+  "description": "Official app, privacy, terms, safety, and support portal for Ronaillabs."
+}

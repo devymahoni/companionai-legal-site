@@ -3,24 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ronai Labs account deletion instructions for CompanionAI users" />
-  <title>Account Deletion — Ronai Labs</title>
+  <meta name="description" content="Ronaillabs account and data deletion instructions for mobile app users." />
+  <meta name="theme-color" content="#0f172a" />
+  <title>Account Deletion — Ronaillabs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="manifest" href="site.webmanifest" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="index.html" aria-label="Ronai Labs home">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span>Ronai Labs</span>
-      </a>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a data-nav-link href="index.html">Home</a>
-        <a data-nav-link href="apps.html">Apps</a>
-        <a data-nav-link href="privacy.html">Privacy</a>
-        <a data-nav-link href="terms.html">Terms</a>
-        <a data-nav-link href="cookies.html">Cookies</a>
-        <a data-nav-link href="contact.html">Contact</a>
+      <a class="brand" href="index.html" aria-label="Ronaillabs home"><span class="brand-mark" aria-hidden="true">R</span><span>Ronaillabs</span></a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle><span></span><span></span></button>
+      <nav class="nav-links" aria-label="Main navigation" data-menu>
+        <a data-nav-link href="index.html">Home</a><a data-nav-link href="apps.html">Apps</a><a data-nav-link href="privacy.html">Privacy</a><a data-nav-link href="terms.html">Terms</a><a data-nav-link href="cookies.html">Cookies</a><a data-nav-link href="contact.html">Contact</a>
+        <button class="icon-button" type="button" aria-label="Toggle theme" data-theme-toggle></button>
       </nav>
     </div>
   </header>
@@ -31,77 +30,70 @@
         <h2>On this page</h2>
         <ul>
           <li><a href="#overview">Overview</a></li>
-          <li><a href="#in-app">Delete in the app</a></li>
-          <li><a href="#web-request">Request by email</a></li>
+          <li><a href="#in-app">In-app deletion</a></li>
+          <li><a href="#email">Email request</a></li>
           <li><a href="#deleted-data">Data deleted</a></li>
           <li><a href="#retained-data">Data retained</a></li>
-          <li><a href="#processing-time">Processing time</a></li>
+          <li><a href="#timeline">Timeline</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </aside>
 
       <article class="legal-card">
         <div class="meta">
-          <span>Effective date: April 28, 2026</span>
-          <span>Last updated: April 28, 2026</span>
+          <span>Applies to Ronaillabs apps</span>
+          <span>Last updated: September 7, 2026</span>
         </div>
-        <h1>Account Deletion</h1>
-        <p>This page explains how users of <strong>CompanionAI</strong>, a Ronai Labs mobile application, can delete their account and associated app data.</p>
-        <div class="notice">If you can access the app, the fastest way to delete your account is from the in-app Settings screen.</div>
+        <h1>Account and Data Deletion</h1>
+        <p>This page explains how users can request deletion of accounts and associated app data for Ronaillabs mobile applications, including AI companion, education, and quiz apps.</p>
+        <div class="notice">If an app offers in-app account deletion, that is usually the fastest route. This public web page is available for users who cannot access the app or need a manual deletion request.</div>
 
         <h2 id="overview">1. Overview</h2>
-        <p>Ronai Labs provides account deletion options for users who sign in to CompanionAI. Account deletion permanently removes the account and associated app data linked to that account, subject to limited retention where required for security, fraud prevention, billing, or legal compliance.</p>
+        <p>Deletion options depend on the app. Some apps store progress only on the device and may not require an account. Other apps may use sign-in, subscriptions, leaderboards, AI chat history, or cloud sync. When we can identify the account or data, we delete or anonymize eligible data subject to limited retention described below.</p>
 
-        <h2 id="in-app">2. Delete your account in the app</h2>
-        <p>To delete your account directly in the CompanionAI app:</p>
+        <h2 id="in-app">2. Delete inside the app</h2>
         <ol>
-          <li>Open the CompanionAI app.</li>
-          <li>Go to <strong>Settings</strong>.</li>
-          <li>Select <strong>Delete Account</strong>.</li>
+          <li>Open the Ronaillabs app.</li>
+          <li>Go to Settings, Account, Profile, or Privacy controls.</li>
+          <li>Select Delete Account, Delete Data, Reset Progress, or a similar option if available.</li>
           <li>Read the confirmation message carefully.</li>
-          <li>Confirm deletion to permanently delete your account and associated app data.</li>
+          <li>Confirm deletion. This action may be permanent and cannot always be undone.</li>
         </ol>
-        <p>This action cannot be undone. After deletion, you may need to create a new account if you want to use account-based features again.</p>
 
-        <h2 id="web-request">3. Request account deletion by email</h2>
-        <p>If you cannot access the app, you can request account deletion by email:</p>
-        <p>Enter your account email. This button opens Gmail with a pre-filled deletion request.</p>
+        <h2 id="email">3. Request deletion by email</h2>
+        <p>If you cannot access the app, submit a request using the form below. It opens your email client with a pre-filled request.</p>
         <form class="email-request-form" id="deletion-email-form">
-          <label for="account-email">Account email</label>
+          <label for="app-name">App name</label>
           <div class="email-request-row">
-            <input id="account-email" name="account-email" type="email" autocomplete="email" placeholder="you@example.com" required />
-            <button class="button primary" type="submit">Send deletion request by email</button>
+            <input id="app-name" name="app-name" type="text" placeholder="Lunara AI, KPSS Macerasi, SeriesGuru..." required />
+          </div>
+          <label for="account-email">Account email or user ID</label>
+          <div class="email-request-row">
+            <input id="account-email" name="account-email" type="text" autocomplete="email" placeholder="you@example.com or user ID" required />
+            <button class="button primary" type="submit">Create deletion email</button>
           </div>
         </form>
-        <p>Please send the request from the same email address associated with your CompanionAI account, or include enough information for us to verify account ownership.</p>
+        <p>Send the request from the same email used in the app when possible. We may ask for additional information to verify account ownership before deletion.</p>
 
-        <h2 id="deleted-data">4. Data deleted</h2>
-        <p>When your account deletion request is completed, Ronai Labs deletes account-related data associated with your account, including:</p>
+        <h2 id="deleted-data">4. Data we delete or anonymize</h2>
         <ul>
-          <li>your app account;</li>
-          <li>profile and account information;</li>
-          <li>app preferences and personalization data linked to your account;</li>
-          <li>associated app data stored for account usage.</li>
+          <li>Account profile data associated with the verified account.</li>
+          <li>App preferences, cloud-synced progress, leaderboard identity, or personalization data where applicable.</li>
+          <li>AI chat history and related personalization data where the app stores it and deletion is technically available.</li>
+          <li>Support records connected to the request, unless retention is needed for legal or security reasons.</li>
         </ul>
 
         <h2 id="retained-data">5. Data that may be retained</h2>
-        <p>Some limited information may be retained temporarily where required or permitted for:</p>
-        <ul>
-          <li>security and fraud prevention;</li>
-          <li>billing, tax, accounting, or subscription records;</li>
-          <li>legal compliance;</li>
-          <li>backup systems that are overwritten or deleted in the ordinary course of operations;</li>
-          <li>aggregated or de-identified analytics that no longer identify a user.</li>
-        </ul>
+        <p>Some data may be retained where required or permitted, including billing records, fraud prevention logs, tax/accounting records, legal records, security logs, abuse-prevention evidence, app-store transaction records, and backup copies until overwritten in the ordinary backup cycle.</p>
 
-        <h2 id="processing-time">6. Processing time</h2>
-        <p>In-app account deletion is designed to be processed immediately after confirmation. Email-based deletion requests are processed within a reasonable period after account ownership is verified.</p>
+        <h2 id="timeline">6. Processing timeline</h2>
+        <p>In-app deletion may be processed immediately or shortly after confirmation. Email-based requests are processed after account verification and normally within a reasonable period required by applicable law and platform rules.</p>
 
         <h2 id="contact">7. Contact</h2>
-        <p>For account deletion, privacy, or support questions, contact Ronai Labs at:</p>
         <ul>
-          <li><strong>Support email:</strong> support.ronailabs@gmail.com</li>
-          <li><strong>Website:</strong> https://legal.ronailabs.com/index.html</li>
+          <li><strong>Company:</strong> Ronaillabs</li>
+          <li><strong>Support and privacy email:</strong> support.ronailabs@gmail.com</li>
+          <li><strong>Website:</strong> https://legal.ronailabs.com</li>
         </ul>
       </article>
     </div>
@@ -109,39 +101,35 @@
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div class="small">© <span id="year"></span> Ronai Labs. All rights reserved.</div>
-      <nav class="footer-links" aria-label="Footer navigation">
-        <a href="index.html">Home</a>
-        <a href="apps.html">Apps</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
-        <a href="cookies.html">Cookie Policy</a>
-        <a href="contact.html">Contact Us</a>
-      </nav>
+      <div><a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">R</span><span>Ronaillabs</span></a><div class="small">© <span id="year"></span> Ronaillabs. All rights reserved.</div></div>
+      <nav class="footer-links" aria-label="Footer navigation"><a href="apps.html">Apps</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="cookies.html">Cookies</a><a href="contact.html">Contact</a></nav>
     </div>
   </footer>
   <script src="script.js"></script>
   <script>
     const deletionEmailForm = document.getElementById('deletion-email-form');
     const accountEmailInput = document.getElementById('account-email');
+    const appNameInput = document.getElementById('app-name');
 
-    if (deletionEmailForm && accountEmailInput) {
+    if (deletionEmailForm && accountEmailInput && appNameInput) {
       deletionEmailForm.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        if (!accountEmailInput.reportValidity()) {
+        if (!accountEmailInput.reportValidity() || !appNameInput.reportValidity()) {
           return;
         }
 
+        const appName = appNameInput.value.trim();
         const accountEmail = accountEmailInput.value.trim();
-        const subject = 'CompanionAI Account Deletion Request';
+        const subject = `${appName} Account/Data Deletion Request`;
         const body = [
-          'Hello Ronai Labs,',
+          'Hello Ronaillabs,',
           '',
-          'I would like to request deletion of my CompanionAI account and associated data.',
+          'I would like to request deletion of my account and associated app data.',
           '',
-          `Account email: ${accountEmail}`,
-          'Reason (optional):',
+          `App name: ${appName}`,
+          `Account email or user ID: ${accountEmail}`,
+          'Additional details:',
           '',
           'Thank you.'
         ].join('\n');

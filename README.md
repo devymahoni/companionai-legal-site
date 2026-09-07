@@ -1,6 +1,6 @@
-# Ronai Labs Legal Website
+# Ronaillabs Legal Website
 
-This repository hosts the public legal website for Ronai Labs mobile applications.
+This repository hosts the public legal website for Ronaillabs mobile applications.
 
 ## Included pages
 - `index.html` — landing page and legal portal index
@@ -14,7 +14,7 @@ This repository hosts the public legal website for Ronai Labs mobile application
 - `script.js` — active navigation helper
 
 ## Production values set in this repo
-- Company name: **Ronai Labs**
+- Company name: **Ronaillabs**
 - Support email: **support.ronailabs@gmail.com**
 - Legal/policy email: **legal@ronailabs.com**
 - Website URL: **https://legal.ronailabs.com/index.html**
