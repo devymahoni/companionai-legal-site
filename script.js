@@ -6,12 +6,13 @@ const ronaiApps = [
     label: 'Education',
     platforms: ['Google Play', 'App Store'],
     iconClass: 'icon-kpss',
+    icon: 'assets/app-icons/kpss.webp',
     description:
       'A Turkish exam-preparation app for KPSS candidates with practice questions, mock tests, study cards, and playful revision flows.',
     features: ['Practice questions', 'Mock exams', 'Progress tracking'],
     googlePlay:
       'https://play.google.com/store/apps/details?id=com.ronailabs.kpssmacerasi',
-    appStore: 'https://apps.apple.com/ch/developer/mahmut-yuce/id6792287157?l=en-GB',
+    appStore: 'https://apps.apple.com/tr/app/kpss-maceras%C4%B1-soru-deneme/id6792287155',
     privacy: 'privacy-kpss.html'
   },
   {
@@ -21,6 +22,7 @@ const ronaiApps = [
     label: 'AI companion',
     platforms: ['Google Play'],
     iconClass: 'icon-lunara',
+    icon: 'assets/app-icons/lunara.webp',
     description:
       'A text-first AI companion experience with personalization, reporting flows, user controls, and published safety documentation.',
     features: ['Personalized chat', 'Moderation workflows', 'Account deletion support'],
@@ -36,6 +38,7 @@ const ronaiApps = [
     label: 'Trivia',
     platforms: ['Google Play', 'App Store'],
     iconClass: 'icon-series',
+    icon: 'assets/app-icons/seriesguru.webp',
     description:
       'A TV-series trivia app with quiz packs, points, difficulty levels, badges, and leaderboard-oriented replay value.',
     features: ['Quiz packs', 'Leaderboards', 'Multi-language support'],
@@ -118,7 +121,9 @@ const appCardTemplate = (app, variant = 'compact') => `
   <article class="app-card ${variant === 'full' ? 'app-card-full' : ''} reveal is-visible" data-category="${app.category}">
     <div>
       <header>
-        <span class="app-icon ${app.iconClass}" aria-hidden="true">${app.shortName}</span>
+        <span class="app-icon ${app.iconClass}" aria-hidden="true">
+          <img src="${app.icon}" alt="" loading="lazy" />
+        </span>
         <div>
           <span class="eyebrow subtle">${app.label}</span>
           <h3>${escapeHtml(app.name)}</h3>
