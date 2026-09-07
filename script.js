@@ -6,7 +6,8 @@ const ronaiApps = [
     label: 'Education',
     platforms: ['Google Play', 'App Store'],
     iconClass: 'icon-kpss',
-    icon: 'assets/app-icons/kpss.webp',
+    icon: 'assets/app-icons/kpss-local.png',
+    screenshot: 'assets/app-screens/kpss-1.jpg',
     description:
       'A Turkish exam-preparation app for KPSS candidates with practice questions, mock tests, study cards, and playful revision flows.',
     features: ['Practice questions', 'Mock exams', 'Progress tracking'],
@@ -22,7 +23,8 @@ const ronaiApps = [
     label: 'AI companion',
     platforms: ['Google Play'],
     iconClass: 'icon-lunara',
-    icon: 'assets/app-icons/lunara.webp',
+    icon: 'assets/app-icons/lunara-local.png',
+    screenshot: 'assets/app-screens/lunara-1.png',
     description:
       'A text-first AI companion experience with personalization, reporting flows, user controls, and published safety documentation.',
     features: ['Personalized chat', 'Moderation workflows', 'Account deletion support'],
@@ -38,7 +40,8 @@ const ronaiApps = [
     label: 'Trivia',
     platforms: ['Google Play', 'App Store'],
     iconClass: 'icon-series',
-    icon: 'assets/app-icons/seriesguru.webp',
+    icon: 'assets/app-icons/seriesguru-local.png',
+    screenshot: 'assets/app-screens/seriesguru-1.jpg',
     description:
       'A TV-series trivia app with quiz packs, points, difficulty levels, badges, and leaderboard-oriented replay value.',
     features: ['Quiz packs', 'Leaderboards', 'Multi-language support'],
@@ -119,26 +122,29 @@ const createStoreLinks = (app) => {
 
 const appCardTemplate = (app, variant = 'compact') => `
   <article class="app-card ${variant === 'full' ? 'app-card-full' : ''} reveal is-visible" data-category="${app.category}">
-    <div>
-      <header>
-        <span class="app-icon ${app.iconClass}" aria-hidden="true">
-          <img src="${app.icon}" alt="" loading="lazy" />
-        </span>
-        <div>
-          <span class="eyebrow subtle">${app.label}</span>
-          <h3>${escapeHtml(app.name)}</h3>
-        </div>
-      </header>
-      <p>${escapeHtml(app.description)}</p>
-      <div class="app-meta">
-        ${app.platforms.map((platform) => `<span class="platform-pill">${platform}</span>`).join('')}
+    ${variant === 'full' ? `
+      <div class="app-preview" aria-hidden="true">
+        <img src="${app.screenshot}" alt="" loading="lazy" />
       </div>
-      ${variant === 'full' ? `
-        <ul class="feature-list">
-          ${app.features.map((feature) => `<li>${escapeHtml(feature)}</li>`).join('')}
-        </ul>
-      ` : ''}
-    </div>
+    ` : ''}
+    <header>
+      <span class="app-icon ${app.iconClass}" aria-hidden="true">
+        <img src="${app.icon}" alt="" loading="lazy" />
+      </span>
+      <div>
+        <span class="eyebrow subtle">${app.label}</span>
+        <h3>${escapeHtml(app.name)}</h3>
+        <div class="app-meta">
+          ${app.platforms.map((platform) => `<span class="platform-pill">${platform}</span>`).join('')}
+        </div>
+      </div>
+    </header>
+    <p>${escapeHtml(app.description)}</p>
+    ${variant === 'full' ? `
+      <ul class="feature-list">
+        ${app.features.map((feature) => `<li>${escapeHtml(feature)}</li>`).join('')}
+      </ul>
+    ` : ''}
     <div class="actions">
       ${createStoreLinks(app)}
     </div>
