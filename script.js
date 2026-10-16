@@ -1,5 +1,15 @@
 const ronaiApps = [
   {
+    name: 'CarTube: Car Screen Mirror', shortName: 'C',
+    category: 'entertainment', label: 'Video & GPS dials', platforms: ['iOS'],
+    iconClass: 'icon-series', icon: 'assets/app-icons/cartube.png',
+    screenshot: 'assets/app-icons/cartube.png',
+    description: 'Your own videos, supported streams, Picture-in-Picture, AirPlay and selectable GPS dials. CarPlay features depend on compatible iOS and vehicle support.',
+    features: ['Classic dial free', 'Premium dial styles', 'Ad-free Premium'],
+    googlePlay: '', appStore: '', privacy: 'privacy-cartube.html', detail: 'app-cartube.html',
+    terms: 'terms-cartube.html'
+  },
+  {
     name: 'KPSS Macerasi',
     shortName: 'K',
     category: 'education',
@@ -124,6 +134,7 @@ const createStoreLinks = (app) => {
 
   links.push(`<a class="button secondary" href="${app.privacy}">Privacy</a>`);
 
+  if (app.terms) links.push(`<a class="button secondary" href="${app.terms}">Terms</a>`);
   return links.join('');
 };
 

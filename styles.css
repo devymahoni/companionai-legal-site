@@ -1575,3 +1575,109 @@ p {
     width: 100%;
   }
 }
+
+/* Shared, accessible surfaces for both themes — October 2026. */
+:root {
+  --bg: #f6f7fa; --bg-soft: #eef1f6;
+  --surface: #ffffff; --surface-raised: #ffffff; --surface-muted: #f0f3f8;
+  --text: #28354a; --heading: #101c30; --muted: #536176; --subtle: #627086;
+  --line: #dce2eb; --line-strong: #b9c5d6;
+  --accent: #315bc9; --accent-strong: #2448aa; --accent-soft: #eaf0ff;
+  --header: rgba(246,247,250,.93);
+  --radius: 20px;
+  --shadow: 0 12px 40px rgba(24,40,70,.06);
+  --shadow-lg: 0 24px 64px rgba(24,40,70,.09);
+}
+[data-theme="dark"] {
+  --bg: #0c111b; --bg-soft: #111925;
+  --surface: #151e2c; --surface-raised: #1a2637; --surface-muted: #111a28;
+  --text: #dce4f0; --heading: #f3f6fc; --muted: #aebdd1; --subtle: #9aacc3;
+  --line: #2a374a; --line-strong: #42546f;
+  --accent: #a2bcff; --accent-strong: #c0d1ff; --accent-soft: #223354;
+  --header: rgba(12,17,27,.94);
+  --shadow: 0 12px 40px rgba(0,0,0,.12);
+  --shadow-lg: 0 24px 64px rgba(0,0,0,.2);
+}
+body, .app-detail-page { background: var(--bg); }
+.hero-home, .app-hero {
+  background: radial-gradient(ellipse at 85% 20%, var(--accent-soft), transparent 65%), var(--bg);
+}
+.hero-home { padding: 88px 0 80px; }
+.hero-grid { grid-template-columns: 1.25fr 1fr; gap: 64px; }
+.hero h1 { font-size: clamp(38px, 4.5vw, 64px); line-height: 1.08; letter-spacing: -.045em; max-width: 13ch; }
+.hero p { font-size: 18px; max-width: 53ch; }
+.hero .eyebrow { margin-bottom: 24px; }
+.eyebrow, .eyebrow.subtle { background: var(--accent-soft); color: var(--accent); border: 1px solid var(--line); border-radius: 100px; }
+.brand { letter-spacing: -.035em; font-weight: 800; }
+.brand-mark { background: var(--heading); color: var(--bg); border-radius: 12px; box-shadow: none; }
+.nav-links a { font-size: 14px; font-weight: 600; border-radius: 9px; }
+.icon-button { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; min-width: 44px; min-height: 44px; }
+.button { min-height: 46px; padding: 12px 20px; border-radius: 12px; font-size: 14px; font-weight: 600; transition: background .18s, border-color .18s, transform .18s; box-shadow: none; }
+.button.primary { background: var(--heading); color: var(--bg); border: 1px solid var(--heading); box-shadow: none; }
+.button.primary:hover { background: var(--text); }
+.button.secondary, .button.store { background: var(--surface); border: 1px solid var(--line-strong); color: var(--heading); box-shadow: none; }
+.button.secondary:hover, .button.store:hover { background: var(--surface-raised); border-color: var(--accent); }
+.button.store::before { display: none; }
+.product-console { transform: none; border: 1px solid var(--line); border-radius: 24px; background: var(--surface); box-shadow: var(--shadow-lg); }
+.console-top { border-color: var(--line); }
+.console-row, .console-row:nth-child(2), .console-row:nth-child(3) { background: var(--surface-muted); border: 1px solid var(--line); border-radius: 16px; }
+.console-row a { padding: 8px; font-size: 13px; }
+.surface-band, .app-gallery-section { background: var(--bg-soft); border-color: var(--line); }
+.app-card, .policy-card, .card, .legal-card, .contact-card, .sidebar, .ops-panel, .timeline, .cta, .legal-search-panel, .page-hero, .directory-tools {
+  border: 1px solid var(--line); border-radius: 20px; background: var(--surface); box-shadow: none;
+}
+.app-card::before { display: none; }
+.app-showcase { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.app-card { padding: 28px; }
+.app-card .actions { margin-top: auto; padding-top: 20px; gap: 8px; }
+.app-card-full, .app-card-full[data-category] { background: var(--surface); }
+.app-card-full .button { font-size: 13px; }
+.app-preview { background: var(--surface-muted); border: 1px solid var(--line); border-radius: 16px; }
+.app-preview img[src*="cartube"] { object-fit: contain; transform: none; }
+.policy-card { background: var(--surface); padding: 26px; }
+.policy-card:hover, .app-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+.cta, .app-cta, .page-hero { background: var(--surface); }
+.directory-tools { background: var(--surface); border-radius: 16px; }
+.filter-tabs button { min-height: 44px; border-radius: 10px; }
+.filter-tabs button.is-active { color: var(--bg); background: var(--heading); }
+.search-box input, .email-request-row input { border: 1px solid var(--line-strong); border-radius: 10px; min-height: 46px; }
+input::placeholder { color: var(--subtle); opacity: 1; }
+.feature-tile { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; }
+.feature-tile span { color: var(--accent); background: var(--accent-soft); }
+.app-stage-backdrop, .app-device-stage::before { opacity: .25; }
+.screenshot-strip img[src*="banner"], .screenshot-strip img[src*="crown"], .screenshot-strip img[src*="trophy"] { background: var(--surface-muted); }
+.legal-layout { grid-template-columns: 240px minmax(0,1fr); gap: 28px; align-items: start; }
+.legal-card { padding: 40px; overflow-wrap: anywhere; }
+.legal-card h1 { font-size: clamp(30px,4vw,44px); line-height: 1.15; letter-spacing: -.035em; }
+.legal-card h2 { margin-top: 36px; font-size: 22px; }
+.legal-card p, .legal-card li { line-height: 1.8; }
+.legal-card a:not(.button), .contact-card a:not(.button) { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.legal-card .actions { margin: 24px 0; }
+.meta span { background: var(--surface-muted); font-size: 12px; }
+.notice { border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 12px; }
+.sidebar { padding: 22px; }
+.sidebar a { border-radius: 8px; }
+.site-footer { background: var(--bg); border-color: var(--line); }
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+  .hero h1 { max-width: 17ch; }
+  .hero-home { padding: 44px 0; }
+  .legal-layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+}
+@media (max-width: 620px) {
+  .container { width: calc(100% - 32px); }
+  .app-showcase, .app-list { grid-template-columns: 1fr; }
+  .legal-card { padding: 24px 20px; }
+  .hero h1 { font-size: 40px; }
+  .hero p { font-size: 16px; }
+  .app-card { padding: 22px; }
+  .actions .button { flex: 1 1 auto; text-align: center; }
+  .console-row { gap: 12px; }
+  .directory-tools { align-items: stretch; }
+  .filter-tabs { flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
+}
