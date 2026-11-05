@@ -1687,3 +1687,28 @@ input::placeholder { color: var(--subtle); opacity: 1; }
   .page-hero h1 { font-size: 34px; }
   .page-hero p { font-size: 16px; }
 }
+
+/* Ronai Labs shared identity, retaining existing document and product layouts. */
+:root {
+  --bg: #faf6ef; --bg-soft: #f2eade; --surface: #fffcf7; --surface-raised: #fffaf1; --surface-muted: #f6efe4;
+  --heading: #350e1c; --text: #49352f; --muted: #725d51; --subtle: #7b6758;
+  --line: #e3d6c3; --line-strong: #c9b391; --accent: #7d243c; --accent-strong: #5c1329; --accent-soft: #f4e5df;
+  --header: #faf6eff5;
+}
+[data-theme="dark"] {
+  --bg: #1a0810; --bg-soft: #230c15; --surface: #2a111c; --surface-raised: #351824; --surface-muted: #230d16;
+  --heading: #fff1dd; --text: #efdfd0; --muted: #cdb7a7; --subtle: #c1a894;
+  --line: #57313c; --line-strong: #815464; --accent: #e7c181; --accent-strong: #ffe1ab; --accent-soft: #40222c;
+  --header: #1a0810f5;
+}
+img.brand-mark { object-fit: contain; padding: 0; background: #270510; border-radius: 8px; }
+.nav-toggle { min-width: 44px; min-height: 44px; cursor: pointer; }
+.nav-links a { min-height: 44px; }
+.contact-card { overflow-wrap: anywhere; }
+@media (max-width: 900px) {
+  .legal-layout .sidebar { max-height: 190px; overflow-y: auto; scrollbar-width: thin; }
+  .legal-layout .sidebar h2 { margin-bottom: 7px; }
+  .legal-layout .sidebar ul { display: flex; flex-wrap: wrap; gap: 4px; }
+  .legal-layout .sidebar li + li { margin-top: 0; }
+  .legal-layout .sidebar a { min-height: 44px; display: flex; align-items: center; padding: 6px 9px; font-size: 13px; }
+}

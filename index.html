@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Ronaillabs official app portfolio, privacy policies, terms, safety standards, and support portal." />
-  <meta name="theme-color" content="#0f172a" />
+  <meta name="theme-color" content="#260710" />
   <meta property="og:title" content="Ronaillabs — Apps, Privacy & Support" />
   <meta property="og:description" content="Official legal and support portal for Ronaillabs mobile applications on Google Play and the App Store." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://legal.ronailabs.com/index.html" />
-  <title>Ronaillabs — Apps, Privacy & Support</title>
+  <title>Ronai Labs — Apps, Privacy & Support</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="manifest" href="site.webmanifest" />
-  <link rel="stylesheet" href="styles.css?v=20261016-theme" />
+  <link rel="stylesheet" href="styles.css?v=20261105-studio" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -32,180 +32,41 @@
       }
     }
   </script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;650;700;750;800&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="home.css?v=20261105-studio" />
+  <link rel="icon" type="image/webp" href="assets/brand/ronai-mark-small.webp" />
 </head>
-<body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="index.html" aria-label="Ronaillabs home">
-        <span class="brand-mark" aria-hidden="true">R</span>
-        <span>Ronaillabs</span>
-      </a>
-      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="nav-links" aria-label="Main navigation" data-menu>
-        <a data-nav-link href="index.html">Home</a>
-        <a data-nav-link href="apps.html">Apps</a>
-        <a data-nav-link href="privacy.html">Privacy</a>
-        <a data-nav-link href="terms.html">Terms</a>
-        <a data-nav-link href="cookies.html">Cookies</a>
-        <a data-nav-link href="contact.html">Contact</a>
-        <button class="icon-button" type="button" aria-label="Toggle theme" data-theme-toggle></button>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero hero-home">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <span class="eyebrow">Official Ronaillabs portal</span>
-          <h1>Thoughtful apps.<br />Clear commitments.</h1>
-          <p>
-            Discover our apps, understand how your data is used, and find the support you need. All in one place.
-          </p>
-          <div class="actions">
-            <a class="button primary" href="apps.html">Explore apps</a>
-            <a class="button secondary" href="#legal-center">Open legal center</a>
-          </div>
-          <div class="trust-strip" aria-label="Portal highlights">
-            <span>Google Play</span>
-            <span>App Store</span>
-            <span>Privacy-first docs</span>
-          </div>
-        </div>
-
-        <div class="product-console reveal" aria-label="Ronaillabs application overview">
-          <div class="console-top">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div class="console-screen"><div class="console-row"><span class="app-icon"><img src="assets/app-icons/cartube.png" alt="" /></span><div><strong>CarTube</strong><small>Video &amp; GPS dials · iOS</small></div><a href="app-cartube.html">Explore</a></div>
-            <div class="console-row">
-              <span class="app-icon icon-kpss"><img src="assets/app-icons/kpss-local.png" alt="" /></span>
-              <div>
-                <strong>KPSS Macerasi</strong>
-                <small>Education • iOS & Android</small>
-              </div>
-              <a href="privacy-kpss.html">Policy</a>
-            </div>
-            <div class="console-row">
-              <span class="app-icon icon-lunara"><img src="assets/app-icons/lunara-local.png" alt="" /></span>
-              <div>
-                <strong>Lunara AI</strong>
-                <small>AI chat • Android</small>
-              </div>
-              <a href="privacy-aura.html">Policy</a>
-            </div>
-            <div class="console-row">
-              <span class="app-icon icon-series"><img src="assets/app-icons/seriesguru-local.png" alt="" /></span>
-              <div>
-                <strong>SeriesGuru</strong>
-                <small>Trivia • iOS & Android</small>
-              </div>
-              <a href="privacy-seriesguru.html">Policy</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section surface-band">
-      <div class="container split-heading">
-        <div>
-          <span class="eyebrow subtle">Product portfolio</span>
-          <h2>Mobile apps with clear public documentation.</h2>
-        </div>
-        <p class="lead">
-          Ronaillabs publishes app-specific privacy pages, support routes, data deletion instructions,
-          and safety information from a single official domain.
-        </p>
-      </div>
-      <div class="container app-showcase" id="home-apps" data-home-apps></div>
-    </section>
-
-    <section class="section" id="legal-center">
-      <div class="container split-heading">
-        <div>
-          <span class="eyebrow subtle">Legal center</span>
-          <h2>Your questions. Clear answers.</h2>
-        </div>
-        <p class="lead">Find privacy policies, terms of use, and help with your data.</p>
-      </div>
-      <div class="container legal-search-panel">
-        <label class="search-box">
-          <span>Search legal pages</span>
-          <input type="search" placeholder="Search privacy, terms, deletion..." data-policy-search />
-        </label>
-        <div class="policy-grid" data-policy-results></div>
-      </div>
-    </section>
-
-    <section class="section surface-band">
-      <div class="container ops-grid">
-        <article class="ops-panel reveal">
-          <span class="eyebrow subtle">Compliance posture</span>
-          <h2>Built for clarity, review, and long-term trust.</h2>
-          <p>
-            The site separates product discovery from policy detail, making the experience easier
-            for users, regulators, and app-store review teams.
-          </p>
-        </article>
-        <div class="timeline reveal" aria-label="Compliance workflow">
-          <div>
-            <strong>1. Discover</strong>
-            <span>Open the app portfolio and choose the product.</span>
-          </div>
-          <div>
-            <strong>2. Review</strong>
-            <span>Read privacy, terms, safety, cookie, or deletion pages.</span>
-          </div>
-          <div>
-            <strong>3. Contact</strong>
-            <span>Reach support or privacy contact channels quickly.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section cta-section">
-      <div class="container cta">
-        <div>
-          <span class="eyebrow">Need help?</span>
-          <h2>Contact Ronaillabs support.</h2>
-          <p>For account, subscription, privacy, or app-store policy questions.</p>
-        </div>
-        <div class="actions">
-          <a class="button primary" href="contact.html">Contact support</a>
-          <button class="button secondary" type="button" data-copy="support.ronailabs@gmail.com">Copy email</button>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <a class="brand footer-brand" href="index.html" aria-label="Ronaillabs home">
-          <span class="brand-mark" aria-hidden="true">R</span>
-          <span>Ronaillabs</span>
-        </a>
-        <div class="small">© <span id="year"></span> Ronaillabs. All rights reserved.</div>
-      </div>
-      <nav class="footer-links" aria-label="Footer navigation">
-        <a href="apps.html">Apps</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="cookies.html">Cookies</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </footer>
-
-  <div class="toast" role="status" aria-live="polite" data-toast></div>
-  <script src="script.js?v=20261016-cartube"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</body>
-</html>
+<body class="studio-home">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="container nav"><a class="brand" href="index.html" aria-label="Ronai Labs home"><img src="assets/brand/ronai-mark-small.webp" width="44" height="44" alt="" /><span>Ronai Labs</span></a>
+<button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-menu" data-menu-toggle><img class="ui-icon" src="assets/icons/list.svg" alt="" width="20" height="20" /></button>
+<nav class="nav-links" id="main-menu" aria-label="Main navigation" data-menu><a href="#our-apps">Our apps</a><a href="#our-studio">Our studio</a><a href="#legal-center">Legal center</a><a href="contact.html">Support</a></nav>
+</div></header>
+<main id="main-content">
+<section class="studio-hero" aria-labelledby="hero-heading">
+<div class="container hero-composition"><div class="studio-hero-copy">
+<h1 id="hero-heading">Thoughtful apps.<br /><em>Clear commitments.</em></h1>
+<p>We create mobile apps for learning, entertainment, and everyday life. Explore four distinct experiences from Ronai Labs, with app-specific privacy information and a clear route to support whenever you need it.</p>
+<div class="hero-actions"><a class="button primary" href="#our-apps">Explore our apps</a><a class="text-action" href="#our-studio">Meet Ronai Labs <img class="ui-icon" src="assets/icons/arrow-right.svg" alt="" width="20" height="20" /></a></div>
+</div>
+<div class="hero-art" aria-hidden="true"><img class="hero-monogram" src="assets/brand/ronai-mark-animated.gif" data-motion-image data-static="assets/brand/ronai-mark.webp" data-animated="assets/brand/ronai-mark-animated.gif" width="360" height="360" alt="" />
+<div class="hero-screen hero-screen-main"><img src="assets/app-screens/kpss-1.jpg" data-hero-screen data-screen-kind="kpss" alt="" width="444" height="960" /></div>
+<div class="hero-screen hero-screen-secondary"><img src="assets/app-screens/lunara-1.png" alt="" width="266" height="591" /></div>
+</div></div>
+<div class="container showcase-controls"><button class="round-control" type="button" data-hero-step="-1" aria-label="Previous app"><img class="ui-icon" src="assets/icons/arrow-left.svg" alt="" width="20" height="20" /></button><div class="app-choices" aria-label="Choose a featured application"><button type="button" class="app-choice " data-hero-app="cartube" aria-pressed="false"><img src="assets/app-icons/cartube.webp" width="44" height="44" alt="" /><span>CarTube</span></button><button type="button" class="app-choice is-selected" data-hero-app="kpss" aria-pressed="true"><img src="assets/app-icons/kpss-local.webp" width="44" height="44" alt="" /><span>KPSS Macerasi</span></button><button type="button" class="app-choice " data-hero-app="lunara" aria-pressed="false"><img src="assets/app-icons/lunara-local.webp" width="44" height="44" alt="" /><span>Lunara AI</span></button><button type="button" class="app-choice " data-hero-app="seriesguru" aria-pressed="false"><img src="assets/app-icons/seriesguru-local.webp" width="44" height="44" alt="" /><span>SeriesGuru</span></button></div><button class="round-control" type="button" data-hero-step="1" aria-label="Next app"><img class="ui-icon" src="assets/icons/arrow-right.svg" alt="" width="20" height="20" /></button><button class="round-control motion-control" type="button" data-motion-toggle aria-pressed="false" aria-label="Pause animations"><img class="ui-icon" src="assets/icons/pause.svg" alt="" width="20" height="20" /></button></div>
+<div class="container hero-selection" aria-live="polite"><span data-hero-caption>KPSS Macerasi · Practice questions, mock exams, and study progress.</span><a href="app-kpss.html" data-hero-link>View app <img class="ui-icon" src="assets/icons/arrow-right.svg" alt="" width="20" height="20" /></a></div>
+</section>
+<section class="portfolio-section" id="our-apps" aria-labelledby="apps-heading"><div class="container portfolio-grid"><div class="portfolio-intro reveal"><h2 id="apps-heading">Four apps.<br /><em>Four different worlds.</em></h2><p>From preparing for an exam to finding your next trivia challenge, our apps bring different interests into focus. Choose an app to see what it offers, where it is available, and how its data is handled.</p><a class="underlined-link" href="apps.html">See all applications <img class="ui-icon" src="assets/icons/arrow-right.svg" alt="" width="20" height="20" /></a></div>
+<div class="portfolio-content"><div class="feature-pair">
+<article class="product-feature feature-kpss reveal"><div class="feature-copy"><h3>KPSS</h3><p>Education for your KPSS goals.</p><a class="outline-link" href="app-kpss.html">View app <img class="ui-icon" src="assets/icons/arrow-right.svg" alt="" width="20" height="20" /></a></div><div class="feature-screen"><img src="assets/app-screens/kpss-1.jpg" alt="KPSS Macerasi exam preparation application" width="444" height="960" loading="lazy" /></div></article>
+<article class="product-feature feature-lunara reveal"><div class="feature-copy"><h3>Lunara AI</h3><p>AI chat with a personality that fits you.</p><a class="outline-link" href="app-lunara.html">View app <img class="ui-icon" src="assets/icons/arrow-right.svg" alt="" width="20" height="20" /></a></div><div class="feature-screen"><img src="assets/app-screens/lunara-1.png" alt="Lunara AI companion selection screen" width="266" height="591" loading="lazy" /></div></article>
+</div><div class="mini-apps"><a class="mini-app" href="app-cartube.html"><img src="assets/app-icons/cartube.webp" width="48" height="48" alt="" /><span><strong>CarTube</strong><small>Video & GPS dials</small></span><span class="mini-link">View app <img class="ui-icon" src="assets/icons/arrow-right.svg" alt="" width="20" height="20" /></span></a><a class="mini-app" href="app-seriesguru.html"><img src="assets/app-icons/seriesguru-local.webp" width="48" height="48" alt="" /><span><strong>SeriesGuru</strong><small>Trivia</small></span><span class="mini-link">View app <img class="ui-icon" src="assets/icons/arrow-right.svg" alt="" width="20" height="20" /></span></a></div></div></div></section>
+<section class="studio-story" id="our-studio" aria-labelledby="studio-heading"><div class="container story-grid"><h2 class="reveal" id="studio-heading">A small studio.<br /><em>A clear purpose.</em></h2><div class="studio-identity" aria-hidden="true"><img class="identity-mark" src="assets/brand/ronai-mark.webp" width="210" height="210" alt="" /><img class="identity-app identity-app-one" src="assets/app-icons/cartube.webp" width="64" height="64" alt="" loading="lazy" /><img class="identity-app identity-app-two" src="assets/app-icons/kpss-local.webp" width="64" height="64" alt="" loading="lazy" /><img class="identity-app identity-app-three" src="assets/app-icons/lunara-local.webp" width="64" height="64" alt="" loading="lazy" /><img class="identity-app identity-app-four" src="assets/app-icons/seriesguru-local.webp" width="64" height="64" alt="" loading="lazy" /></div>
+<div class="story-copy reveal"><p>Ronai Labs develops independent mobile apps across education, AI companionship, and entertainment. Each product has its own character, while privacy information and support stay connected through one official home.</p><p>This portal brings our applications, policies, and contact channels together. You can explore a product, understand how its data is used, or find help without searching across different websites.</p></div></div></section>
+<section class="home-legal" id="legal-center" aria-labelledby="legal-heading"><div class="container legal-home-grid"><div class="legal-intro reveal"><h2 id="legal-heading">Your questions.<br /><em>Clear answers.</em></h2><p>Privacy policies, terms, account deletion, and support—all in one place.</p><div class="legal-extra-links"><a href="cookies.html">Cookies</a><a href="child-safety.html">Child safety</a></div></div>
+<div class="legal-finder"><label class="search-box"><span class="visually-hidden">Search legal pages</span><span class="search-input-wrap"><img class="ui-icon" src="assets/icons/magnifying-glass.svg" alt="" width="20" height="20" /><input type="search" placeholder="Search legal pages" data-policy-search /></span></label><div class="policy-grid" data-policy-results data-policy-limit="3" aria-live="polite"></div></div>
+<div class="support-block"><h3>Need a hand?</h3><a class="email-link" href="mailto:support.ronailabs@gmail.com"><img class="ui-icon" src="assets/icons/envelope.svg" alt="" width="20" height="20" /><span>support.ronailabs@gmail.com</span></a><a class="button primary" href="contact.html">Contact support</a><button class="copy-button" type="button" data-copy="support.ronailabs@gmail.com"><img class="ui-icon" src="assets/icons/copy.svg" alt="" width="20" height="20" /> Copy email</button></div></div></section>
+</main><footer class="site-footer"><div class="container footer-grid"><div><a class="brand" href="index.html" aria-label="Ronai Labs home"><img src="assets/brand/ronai-mark-small.webp" width="44" height="44" alt="" /><span>Ronai Labs</span></a><p class="small">© <span id="year"></span> Ronai Labs. All rights reserved.</p></div><nav class="footer-links" aria-label="Footer navigation"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="cookies.html">Cookies</a><a href="account-deletion.html">Account deletion</a><a href="contact.html">Contact</a></nav></div></footer>
+<div class="toast" role="status" aria-live="polite" data-toast></div>
+<script src="script.js?v=20261105-studio"></script><script src="home.js?v=20261105-studio"></script>
+</body></html>

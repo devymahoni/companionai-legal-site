@@ -10,14 +10,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="manifest" href="site.webmanifest" />
-  <link rel="stylesheet" href="styles.css?v=20261016-theme" />
+  <link rel="stylesheet" href="styles.css?v=20261105-studio" />
+  <link rel="icon" type="image/webp" href="assets/brand/ronai-mark-small.webp" />
 </head>
 <body>
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="index.html" aria-label="Ronaillabs home">
-        <span class="brand-mark" aria-hidden="true">R</span>
-        <span>Ronaillabs</span>
+        <img class="brand-mark" src="assets/brand/ronai-mark-small.webp" width="38" height="38" alt="" />
+        <span>Ronai Labs</span>
       </a>
       <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle>
         <span></span>
@@ -55,11 +56,11 @@
           <span>Search apps</span>
           <input type="search" placeholder="Search education, AI, trivia..." data-app-search />
         </label>
-        <div class="filter-tabs" role="tablist" aria-label="Filter apps">
-          <button type="button" class="is-active" data-app-filter="all">All</button>
-          <button type="button" data-app-filter="education">Education</button>
-          <button type="button" data-app-filter="ai">AI</button>
-          <button type="button" data-app-filter="entertainment">Entertainment</button>
+        <div class="filter-tabs" role="group" aria-label="Filter apps">
+          <button type="button" class="is-active" aria-pressed="true" data-app-filter="all">All</button>
+          <button type="button" aria-pressed="false" data-app-filter="education">Education</button>
+          <button type="button" aria-pressed="false" data-app-filter="ai">AI</button>
+          <button type="button" aria-pressed="false" data-app-filter="entertainment">Entertainment</button>
         </div>
       </div>
       <div class="app-list" data-app-list></div>
@@ -70,8 +71,8 @@
     <div class="container footer-grid">
       <div>
         <a class="brand footer-brand" href="index.html" aria-label="Ronaillabs home">
-          <span class="brand-mark" aria-hidden="true">R</span>
-          <span>Ronaillabs</span>
+          <img class="brand-mark" src="assets/brand/ronai-mark-small.webp" width="38" height="38" alt="" />
+          <span>Ronai Labs</span>
         </a>
         <div class="small">© <span id="year"></span> Ronaillabs. All rights reserved.</div>
       </div>
@@ -86,7 +87,7 @@
   </footer>
 
   <div class="toast" role="status" aria-live="polite" data-toast></div>
-  <script src="script.js?v=20261016-cartube"></script>
+  <script src="script.js?v=20261105-studio"></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

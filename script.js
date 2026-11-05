@@ -2,8 +2,8 @@ const ronaiApps = [
   {
     name: 'CarTube: Car Screen Mirror', shortName: 'C',
     category: 'entertainment', label: 'Video & GPS dials', platforms: ['iOS'],
-    iconClass: 'icon-series', icon: 'assets/app-icons/cartube.png',
-    screenshot: 'assets/app-icons/cartube.png',
+    iconClass: 'icon-series', icon: 'assets/app-icons/cartube.webp',
+    screenshot: 'assets/app-icons/cartube.webp',
     description: 'Your own videos, supported streams, Picture-in-Picture, AirPlay and selectable GPS dials. CarPlay features depend on compatible iOS and vehicle support.',
     features: ['Classic dial free', 'Premium dial styles', 'Ad-free Premium'],
     googlePlay: '', appStore: '', privacy: 'privacy-cartube.html', detail: 'app-cartube.html',
@@ -16,7 +16,7 @@ const ronaiApps = [
     label: 'Education',
     platforms: ['Google Play', 'App Store'],
     iconClass: 'icon-kpss',
-    icon: 'assets/app-icons/kpss-local.png',
+    icon: 'assets/app-icons/kpss-local.webp',
     screenshot: 'assets/app-screens/kpss-1.jpg',
     description:
       'A Turkish exam-preparation app for KPSS candidates with practice questions, mock tests, study cards, and playful revision flows.',
@@ -34,7 +34,7 @@ const ronaiApps = [
     label: 'AI companion',
     platforms: ['Google Play'],
     iconClass: 'icon-lunara',
-    icon: 'assets/app-icons/lunara-local.png',
+    icon: 'assets/app-icons/lunara-local.webp',
     screenshot: 'assets/app-screens/lunara-1.png',
     description:
       'A text-first AI companion experience with personalization, reporting flows, user controls, and published safety documentation.',
@@ -52,7 +52,7 @@ const ronaiApps = [
     label: 'Trivia',
     platforms: ['Google Play', 'App Store'],
     iconClass: 'icon-series',
-    icon: 'assets/app-icons/seriesguru-local.png',
+    icon: 'assets/app-icons/seriesguru-local.webp',
     screenshot: 'assets/app-screens/seriesguru-1.jpg',
     description:
       'A TV-series trivia app with quiz packs, points, difficulty levels, badges, and leaderboard-oriented replay value.',
@@ -103,6 +103,22 @@ const policies = [
     tag: 'Support'
   }
 ];
+
+// Search covers every existing product policy and common Turkish queries.
+const policyKeywords = {
+  'privacy.html': 'gizlilik veri privacy',
+  'terms.html': 'kosullar sartlar sozlesme terms',
+  'cookies.html': 'cerez cookie',
+  'account-deletion.html': 'hesap silme hesap sil veri silme account deletion delete',
+  'child-safety.html': 'cocuk guvenligi safety',
+  'contact.html': 'iletisim destek yardim support contact'
+};
+policies.forEach((policy) => { policy.keywords = policyKeywords[policy.href] || ''; });
+ronaiApps.forEach((app) => {
+  policies.push({ title: `${app.name} Privacy`, description: app.description, href: app.privacy, tag: 'App policy', keywords: `${app.name} gizlilik privacy` });
+  if (app.terms) policies.push({ title: `${app.name} Terms`, description: 'Product-specific terms of use.', href: app.terms, tag: 'App policy', keywords: `${app.name} kosullar sozlesme terms` });
+});
+const normalizeSearch = (value) => value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ı/g, 'i').trim();
 
 const escapeHtml = (value) =>
   value.replace(/[&<>"']/g, (char) => ({
@@ -188,14 +204,17 @@ const renderPolicies = (query = '') => {
   const target = document.querySelector('[data-policy-results]');
   if (!target) return;
 
-  const normalizedQuery = query.trim().toLowerCase();
-  const filtered = policies.filter((policy) =>
-    [policy.title, policy.description, policy.tag].join(' ').toLowerCase().includes(normalizedQuery)
+  const normalizedQuery = normalizeSearch(query);
+  let filtered = policies.filter((policy) =>
+    normalizeSearch([policy.title, policy.description, policy.tag, policy.keywords || ''].join(' ')).includes(normalizedQuery)
   );
-
+  if (!normalizedQuery && target.dataset.policyLimit) {
+    const initial = ['privacy.html', 'terms.html', 'account-deletion.html'];
+    filtered = initial.map((href) => policies.find((policy) => policy.href === href));
+  }
   target.innerHTML = filtered.length
     ? filtered.map(policyTemplate).join('')
-    : '<div class="notice">No legal pages matched your search.</div>';
+    : '<div class="notice">No legal pages matched your search. Try an app name, privacy, or account deletion.</div>';
 };
 
 const renderApps = (query = '', category = 'all') => {
@@ -219,45 +238,48 @@ const renderApps = (query = '', category = 'all') => {
 };
 
 const initNavigation = () => {
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const normalizePath = (path) => (path.split('/').pop() || 'index').replace(/\.html$/, '');
+  const currentPath = normalizePath(window.location.pathname);
   document.querySelectorAll('[data-nav-link]').forEach((link) => {
-    const href = link.getAttribute('href');
-    const isAppDetail = currentPath.startsWith('app-') && href === 'apps.html';
-    if (href === currentPath || isAppDetail || (currentPath === '' && href === 'index.html')) {
-      link.setAttribute('aria-current', 'page');
-    }
+    const path = normalizePath(link.getAttribute('href'));
+    const isAppDetail = currentPath.startsWith('app-') && path === 'apps';
+    if (path === currentPath || isAppDetail) link.setAttribute('aria-current', 'page');
   });
-
   const toggle = document.querySelector('[data-menu-toggle]');
   const menu = document.querySelector('[data-menu]');
-
   if (!toggle || !menu) return;
-
-  toggle.addEventListener('click', () => {
-    const isOpen = menu.classList.toggle('is-open');
-    toggle.setAttribute('aria-expanded', String(isOpen));
+  if (!menu.id) menu.id = 'main-menu';
+  toggle.setAttribute('aria-controls', menu.id);
+  const setOpen = (open) => {
+    menu.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+  };
+  toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+  menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+      setOpen(false); toggle.focus();
+    }
+  });
+  document.addEventListener('click', (event) => {
+    if (!menu.contains(event.target) && !toggle.contains(event.target)) setOpen(false);
   });
 };
 
 const initTheme = () => {
   const root = document.documentElement;
   const toggle = document.querySelector('[data-theme-toggle]');
-  const savedTheme = localStorage.getItem('ronai-theme');
+  let savedTheme;
+  try { savedTheme = localStorage.getItem('ronai-theme'); } catch { /* Storage may be disabled. */ }
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const theme = savedTheme || (prefersDark ? 'dark' : 'light');
-
-  root.dataset.theme = theme;
-
+  root.dataset.theme = savedTheme === 'dark' || savedTheme === 'light' ? savedTheme : (prefersDark ? 'dark' : 'light');
   if (!toggle) return;
-
-  const syncLabel = () => {
-    toggle.setAttribute('aria-label', root.dataset.theme === 'dark' ? 'Use light theme' : 'Use dark theme');
-  };
-
+  const syncLabel = () => toggle.setAttribute('aria-label', root.dataset.theme === 'dark' ? 'Use light theme' : 'Use dark theme');
   syncLabel();
   toggle.addEventListener('click', () => {
     root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    localStorage.setItem('ronai-theme', root.dataset.theme);
+    try { localStorage.setItem('ronai-theme', root.dataset.theme); } catch { /* Theme remains usable without storage. */ }
     syncLabel();
   });
 };
@@ -276,8 +298,9 @@ const initSearch = () => {
 
   filters.forEach((filter) => {
     filter.addEventListener('click', () => {
-      filters.forEach((item) => item.classList.remove('is-active'));
+      filters.forEach((item) => { item.classList.remove('is-active'); item.setAttribute('aria-pressed', 'false'); });
       filter.classList.add('is-active');
+      filter.setAttribute('aria-pressed', 'true');
       activeCategory = filter.dataset.appFilter;
       renderApps(appSearch?.value || '', activeCategory);
     });
@@ -326,10 +349,14 @@ const initReveal = () => {
     });
   }, { threshold: 0.16 });
 
-  elements.forEach((element) => observer.observe(element));
+  elements.forEach((element) => {
+    if (document.body.classList.contains('studio-home')) { element.classList.remove('is-visible'); element.setAttribute('data-reveal-ready', ''); }
+    observer.observe(element);
+  });
 };
 
 const initShowcaseMotion = () => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   document.querySelectorAll('[data-tilt-scene]').forEach((scene) => {
     scene.addEventListener('pointermove', (event) => {
       const rect = scene.getBoundingClientRect();
