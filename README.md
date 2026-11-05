@@ -26,7 +26,18 @@ This repository hosts the public legal website for Ronaillabs mobile application
 ## Run locally
 Open `index.html` in any modern browser.
 
-## Deploy (static hosting)
+## Production deployment
+
+The live domain `legal.ronailabs.com` is served by the direct-upload Cloudflare Pages project `ronaillabs-legal`. GitHub Pages deployments do not update this domain.
+
+Export tracked files to a clean directory, then deploy that directory:
+
+```sh
+git archive HEAD | tar -x -C /path/to/clean-release
+npx wrangler pages deploy /path/to/clean-release --project-name ronaillabs-legal --branch main
+```
+
+## Alternative static hosting
 ### GitHub Pages
 1. Create a public GitHub repository.
 2. Upload all files to the repository root.
